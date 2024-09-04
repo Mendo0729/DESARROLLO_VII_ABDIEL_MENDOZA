@@ -24,14 +24,13 @@ function contar_palabras($texto) {
 
 
 function contar_vocales($texto) {
-    $texto = strtolower($texto); // Convertir todo a minúsculas
+    $texto = strtolower($texto);
     $contador = 0;
-    $vocales = ['a', 'e', 'i', 'o', 'u']; // Array con las vocales
+    $vocales = ['a', 'e', 'i', 'o', 'u'];
 
-    // Recorrer cada carácter de la cadena
     for ($i = 0; $i < strlen($texto); $i++) {
         if (in_array($texto[$i], $vocales)) {
-            $contador++; // Incrementar el contador si el carácter es una vocal
+            $contador++; 
         }
     }
 
