@@ -24,10 +24,20 @@ function contar_palabras($texto) {
 
 
 function contar_vocales($texto) {
-    $texto = strtolower($texto); 
-    $vocales = preg_match_all('/[aeiou]/', $texto);
-    return $vocales;
+    $texto = strtolower($texto); // Convertir todo a minúsculas
+    $contador = 0;
+    $vocales = ['a', 'e', 'i', 'o', 'u']; // Array con las vocales
+
+    // Recorrer cada carácter de la cadena
+    for ($i = 0; $i < strlen($texto); $i++) {
+        if (in_array($texto[$i], $vocales)) {
+            $contador++; // Incrementar el contador si el carácter es una vocal
+        }
+    }
+
+    return $contador;
 }
+
 
 function invertir_palabras($texto) {
     $palabras = explode(' ', $texto);
